@@ -24,7 +24,7 @@ public class CalculatorTest {
         System.out.printf("[Before Each] Starting Test #%d: %s%n", ++count, testInfo.getDisplayName());
     }
 
-    // --------------------- ADD TESTS ---------------------
+  
     @ParameterizedTest(name = "{0} + {1} = {2}")
     @MethodSource("provideAddData")
     @DisplayName("Add two numbers")
@@ -43,7 +43,7 @@ public class CalculatorTest {
         );
     }
 
-    // --------------------- SUBTRACT TESTS ---------------------
+   
     @ParameterizedTest(name = "{0} - {1} = {2}")
     @CsvSource({
             "100, 2, 98",
@@ -58,7 +58,7 @@ public class CalculatorTest {
         assertEquals(expected, result);
     }
 
-    // --------------------- MULTIPLY TESTS ---------------------
+  
     @ParameterizedTest(name = "{0} * {1} = {2}")
     @CsvSource({
             "10, 2, 20",
@@ -73,7 +73,7 @@ public class CalculatorTest {
         assertEquals(expected, result);
     }
 
-    // --------------------- DIVIDE TESTS ---------------------
+   
     @ParameterizedTest(name = "{0} / {1} = {2}")
     @CsvSource({
             "10, 2, 5",
@@ -94,7 +94,7 @@ public class CalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> calculator.divide(10, 0));
     }
 
-    // --------------------- HOOKS ---------------------
+
     @AfterEach
     void afterEachTest(TestInfo testInfo) {
         System.out.printf("[After Each] Finished Test #%d: %s%n%n", count, testInfo.getDisplayName());
